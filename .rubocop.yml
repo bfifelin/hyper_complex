@@ -1,0 +1,25 @@
+Layout/LineLength:
+  Max: 120
+
+Metrics/AbcSize:
+  Max: 40
+
+Metrics/CyclomaticComplexity:
+  Max: 15
+
+Metrics/MethodLength:
+  Max: 40
+
+Metrics/PerceivedComplexity:
+  Max: 15
+
+Metrics/ParameterLists:
+  Max: 5
+  MaxOptionalParameters: 5
+
+Style/BlockComments:
+  Enabled: no
+
+Style/ClassVars:
+  Enabled: no
+  
