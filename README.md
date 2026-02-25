@@ -8,7 +8,7 @@ The hypercomplex number can be represented as
 
 $\displaystyle\sum_{i=0}^{2^n-1} a_ie_i$  where  $a_i \in \mathbf{R}$,  $e_0=1$,  $e_1^2= \ldots =e_{2^n-1}^2=-1$,  $n \in \mathbf{N}$
 
-The identity unit ($e_i$) and imaginary units ($e_i, i\gt0$) form the basis for space of dimension $2^n$ over $\mathbf{R}$.
+The identity unit ($e_0$) and imaginary units ($e_i, i\gt0$) form the basis for space of dimension $2^n$ over $\mathbf{R}$.
 
 ## Requirements
    
