@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1 id="hypercomplex">HyperComplex</h1>
+
+    <p>This gem provides a <code>HyperComplex</code> class highly compatible with other numeric classes.</p>
+
+    <p>The <a href="https://en.wikipedia.org/wiki/Hypercomplex_number">hypercomplex numbers</a> form finite-dimensional
+        algebra over the real numbers. These algebras are produced by the <a
+            href="https://en.wikipedia.org/wiki/Cayley%E2%80%93Dickson_construction">Cayley–Dickson construction</a>.
+        Examples of such algebras are complex numbers, quaternions, octonions, sedenions, etc.</p>
+
+    <p>The hypercomplex number can be represented as</p>
+    <math>
+        <munderover>
+            <mi>&Sum;</mi>
+            <mrow>
+                <mi>i</mi>
+                <mo>=</mo>
+                <mn>0</mn>
+            </mrow>
+            <mrow>
+                <msup>
+                    <mn>2</mn>
+                    <mi>n</mi>
+                </msup>
+                <mo>-</mo>
+                <mn>1</mn>
+            </mrow>
+        </munderover>
+        <msub>
+            <mi>a</mi>
+            <mi>i</mi>
+        </msub>
+        <msub>
+            <mi>e</mi>
+            <mi>i</mi>
+        </msub>
+        <mtext>&ThickSpace; where &MediumSpace;</mtext>
+        <msub>
+            <mi>a</mi>
+            <mi>i</mi>
+        </msub>
+        <mo>&in;</mo>
+        <mstyle mathvariant="bold" , mathsize="big">
+            <mi>&Ropf;</mi>
+        </mstyle>
+        <mtext>, &MediumSpace;</mtext>
+        <msub>
+            <mi>e</mi>
+            <mn>0</mn>
+        </msub>
+        <mo>=</mo>
+        <mn>1</mn>
+        <mtext>, &MediumSpace;</mtext>
+        <msubsup>
+            <mi>e</mi>
+            <mn>1</mn>
+            <mn>2</mn>
+        </msubsup>
+        <mo>=</mo>
+        <mi>...</mi>
+        <mo>=</mo>
+        <msubsup>
+            <mi>e</mi>
+            <mrow>
+                <msup>
+                    <mn>2</mn>
+                    <mi>n</mi>
+                </msup>
+                <mo>-</mo>
+                <mn>1</mn>
+            </mrow>
+            <mn>2</mn>
+        </msubsup>
+        <mo>=</mo>
+        <mo>-</mo>
+        <mn>1</mn>
+        <mtext>,&MediumSpace;</mtext>
+        <mi>n</mi>
+        <mo>&in;</mo>
+        <mstyle mathvariant="bold" , mathsize="big">
+            <mi>&Nopf;</mi>
+        </mstyle>
+    </math>
+
+    <p><math>
+            <mtext>The identity unit &MediumSpace;&lpar;</mtext>
+            <msub>
+                <mi>e</mi>
+                <mn>0</mn>
+            </msub>
+            <mtext>&rpar;&MediumSpace; and imaginary units &MediumSpace;&lpar;</mtext>
+            <msub>
+                <mi>e</mi>
+                <mi>i</mi>
+            </msub>
+            <mtext>,&MediumSpace;</mtext>
+            <mi>i</mi>
+            <mo>&ne;</mo>
+            <mn>0</mn>
+            <mtext>&rpar;&MediumSpace; form the basis for space of dimension &MediumSpace;</mtext>
+            <msup>
+                <mn>2</mn>
+                <mi>n</mi>
+            </msup>
+            <mtext>&MediumSpace; over &MediumSpace;</mtext>
+            <mstyle mathvariant="bold" , mathsize="big">
+                <mi>&Ropf;</mi>
+            </mstyle>
+            <mtext>.</mtext>
+        </math></p>
+
+    <h2 id="requirements">Requirements</h2>
+
+    <p>Ruby &gt;= 3.1</p>
+
+    <h2 id="installation">Installation</h2>
+
+    <p>Add this line to your application's Gemfile:</p>
+
+    <pre class="code ruby"><code class="ruby">gem 'mcalendar'</code></pre>
+
+    <p>And then execute:</p>
+
+    <pre class="code ruby"><code class="ruby">$ bundle install</code></pre>
+
+    <p>Or install it yourself as:</p>
+
+    <pre class="code ruby"><code class="ruby">$ gem install hyper_complex
+</code></pre>
+
+    <h2 id="usage">Usage</h2>
+
+    <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hyper_complex</span><span class='tstring_end'>&#39;</span></span>
+
+<span class='comment'># Creation from complex numbers
+</span><span class='id identifier rubyid_q1'>q1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="HyperComplex.html" title="HyperComplex (class)">HyperComplex</a></span></span><span class='period'>.</span><span class='id identifier rubyid_rect'><span class='object_link'><a href="HyperComplex.html#rect-class_method" title="HyperComplex.rect (method)">rect</a></span></span><span class='lparen'>(</span><span class='lparen'>(</span><span class='int'>1</span><span class='op'>+</span><span class='imaginary'>2i</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='lparen'>(</span><span class='int'>3</span><span class='op'>+</span><span class='imaginary'>4i</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='comment'>#=&gt; HyperComplex[1, 2, 3, 4]
+</span><span class='id identifier rubyid_q2'>q2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="HyperComplex.html" title="HyperComplex (class)">HyperComplex</a></span></span><span class='period'>.</span><span class='id identifier rubyid_rect'><span class='object_link'><a href="HyperComplex.html#rect-class_method" title="HyperComplex.rect (method)">rect</a></span></span><span class='lparen'>(</span><span class='lparen'>(</span><span class='int'>5</span><span class='op'>+</span><span class='imaginary'>6i</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='lparen'>(</span><span class='int'>7</span><span class='op'>+</span><span class='imaginary'>8i</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='comment'>#=&gt; HyperComplex[5, 6, 7, 8]
+</span>
+<span class='comment'># Creation from HyperComplex numbers
+</span><span class='id identifier rubyid_o1'>o1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="HyperComplex.html" title="HyperComplex (class)">HyperComplex</a></span></span><span class='period'>.</span><span class='id identifier rubyid_rect'><span class='object_link'><a href="HyperComplex.html#rect-class_method" title="HyperComplex.rect (method)">rect</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_q1'>q1</span><span class='comma'>,</span> <span class='id identifier rubyid_q2'>q2</span><span class='rparen'>)</span> <span class='comment'>#=&gt; HyperComplex[1, 2, 3, 4, 5, 6, 7, 8]
+</span>
+<span class='comment'># Creation from real numbers
+</span><span class='id identifier rubyid_o2'>o2</span> <span class='op'>=</span> <span class='const'>HyperCoplex</span><span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>10</span><span class='comma'>,</span> <span class='int'>11</span><span class='comma'>,</span> <span class='int'>12</span><span class='comma'>,</span> <span class='int'>13</span><span class='rbracket'>]</span> <span class='comment'>#=&gt; HyperComplex[9, 10, 11, 12, 13, 0, 0, 0]
+</span>
+<span class='comment'># Creation from polar form
+</span><span class='id identifier rubyid_q3'>q3</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="HyperComplex.html" title="HyperComplex (class)">HyperComplex</a></span></span><span class='period'>.</span><span class='id identifier rubyid_polar'><span class='object_link'><a href="HyperComplex.html#polar-class_method" title="HyperComplex.polar (method)">polar</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='const'>Math</span><span class='op'>::</span><span class='const'>PI</span><span class='op'>/</span><span class='int'>3</span><span class='comma'>,</span> <span class='const'>Vector</span><span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_normalize'>normalize</span><span class='rparen'>)</span> <span class='comment'>#=&gt; HyperComplex[0.5, 0.5, 0.5, 0.5]
+</span>
+<span class='comment'># standard calculations between numeric instances
+</span><span class='lparen'>(</span><span class='id identifier rubyid_q1'>q1</span><span class='op'>+</span><span class='id identifier rubyid_q2'>q2</span><span class='rparen'>)</span><span class='op'>*</span><span class='id identifier rubyid_o1'>o1</span> <span class='op'>/</span> <span class='const'>Complex</span><span class='op'>::</span><span class='const'>I</span> <span class='op'>-</span> <span class='int'>24</span> <span class='comment'>#=&gt; HyperComplex[(0/1), (88/1), (-40/1), (20/1), (-80/1), (-184/1), (112/1), (-84/1)]
+</span></code></pre>
+
+    <h2 id="contributing">Contributing</h2>
+
+    <p>Bug reports and pull requests are welcome on GitHub at <a
+            href="https://github.com/bfifelin/hyper_complex">github.com/bfifelin/hyper_complex</a>.</p>
+
+    <h2 id="license">License</h2>
+
+    <p>This project is licensed under the terms of the <a href="http://opensource.org/licenses/MIT">MIT license</a>.</p>
+
+    <h2 id="acknowledgments">Acknowledgments</h2>
+
+    <p>This gem is based on the gem <a href="https://rubygems.org/gems/quaternion_c2">quaternion_c2</a> by Masahiro
+        Nomoto.</p>
+</body>
+
+</html>
