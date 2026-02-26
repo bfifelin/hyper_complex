@@ -771,10 +771,8 @@ class HyperComplex < Numeric
   #    #=> HyperComplex[9.648225704568818, -5.4921479890865506, -8.477947559523633, -4.2389737797618166]
   #
   def **(other) # rubocop:disable Metrics/AbcSize
-    unless other.is_a?(Numeric)
-      num1, num2 = other.coerce(self)
-      return num1**num2
-    end
+    raise ArgumentError, 'Argument must be Numeric' unless other.is_a?(Numeric)
+    
     if other.zero?
       return __new__(*Array.new(dim, Float::NAN)) if zero?
 
@@ -810,7 +808,7 @@ class HyperComplex < Numeric
       q *= other
       HyperComplex.polar(Math.exp(q.real), 1, q.imag)
     else
-      num1, num2 = other.coerce(self)
+      num2, num1 = coerce(other)
       num1**num2
     end
   end
