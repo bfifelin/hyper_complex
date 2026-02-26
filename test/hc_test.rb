@@ -250,7 +250,7 @@ class TestHyperComplex < Minitest::Test # rubocop:disable Metrics/ClassLength
     assert_equal HyperComplex[-28, 4, 6, 8], HyperComplex[1, 2, 3, 4]**2
     assert_equal HyperComplex[-28, 4, 6, 8], HyperComplex[1, 2, 3, 4]**(2/1r)
     assert_in_delta(HyperComplex[-28, 4, 6, 8], HyperComplex[1, 2, 3, 4]**2.0, 0.0000001)
-    assert_equal HyperComplex[NaN, NaN], 0**HyperComplex[0, 0, 0, 0]
+    assert_equal HyperComplex[Float::NAN, Float::NAN], 0**HyperComplex[0, 0, 0, 0]
     assert_equal HyperComplex[1, 0], 1**HyperComplex[0, 0, 0, 0]
     assert_equal Complex(1, 0), Complex(1, 1)**HyperComplex[0, 0, 0, 0]
     assert_equal HyperComplex[1.0, 0.0, 0.0, 0.0], HyperComplex[1, 0, 0, 0]**Complex::I  end
